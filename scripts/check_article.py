@@ -684,7 +684,7 @@ def main():
         epilog=epilog_text,
     )
     ap.add_argument("file", help='Path to markdown file, or "-" for stdin')
-    ap.add_argument("--target", type=int, default=900, help="Target word count (default: 900)")
+    ap.add_argument("--target", type=int, default=0, help="Target word count (default: 0 = content-driven adaptive length)")
     ap.add_argument("--tolerance", type=float, default=0.15, help="Word count tolerance as fraction (default: 0.15)")
     ap.add_argument("--tool", default="", help="Tool name to check mention frequency")
     ap.add_argument("--max-tool", type=int, default=3, help="Max tool mentions allowed (default: 3)")
@@ -797,11 +797,20 @@ def main():
     # ---- length ----
     body_text = " ".join(t for s in sections for _, t in s["body"])
     wc = len(words(body_text))
-    lo, hi = int(a.target * (1 - a.tolerance)), int(a.target * (1 + a.tolerance))
-    if wc < lo:
-        checks.append(f"length: {wc} words, below {lo} (target {a.target}), expand with practical detail")
-    elif wc > hi:
-        checks.append(f"length: {wc} words, above {hi} (target {a.target}), trim repetition")
+    if a.target and a.target > 0:
+        lo, hi = int(a.target * (1 - a.tolerance)), int(a.target * (1 + a.tolerance))
+        if wc < lo:
+            checks.append(f"length: {wc} words, below {lo} (target {a.target}), expand with practical detail")
+        elif wc > hi:
+            checks.append(f"length: {wc} words, above {hi} (target {a.target}), trim repetition")
+    else:
+        # Content-driven adaptive depth (humanizer standard: evaluate substance, not an arbitrary word quota)
+        if wc < 300:
+            checks.append(f"length: {wc} words, brief for a full article (aim for substantive technical coverage)")
+        for sec in body_sections:
+            sec_wc = len(words(" ".join(t for _, t in sec["body"])))
+            if sec_wc < 25 and sec["heading"]:
+                checks.append(f'section "{sec["heading"]}" is very thin ({sec_wc} words), develop the point or merge with an adjacent section')
 
     # ---- rhythm and voice ----
     all_sents = sentences(body_text)
@@ -950,7 +959,8 @@ def main():
             "file": a.file,
             "stats": {
                 "words": wc,
-                "target": a.target,
+                "target": a.target if a.target > 0 else None,
+                "mode": "target" if a.target > 0 else "content-driven",
                 "sections": len(body_sections),
                 "avg_sentence_length": round(avg, 1) if all_sents else None,
                 "short_sentence_ratio": round(short_ratio, 2) if all_sents else None,
@@ -966,8 +976,9 @@ def main():
         sys.exit(1 if has_failed else 0)
 
     # ---- report ----
+    target_str = f"target {a.target}" if a.target > 0 else "content-driven"
     print(f"=== Article check: {a.file} ===")
-    print(f"Words: {wc} (target {a.target}) | H2 sections: {len(body_sections)} | gonna/kinda: {kinda} | lang: {lang}")
+    print(f"Words: {wc} ({target_str}) | H2 sections: {len(body_sections)} | gonna/kinda: {kinda} | lang: {lang}")
     if all_sents:
         print(f"Avg sentence: {avg:.1f} words | short sentences: {short_ratio:.0%}")
     print()

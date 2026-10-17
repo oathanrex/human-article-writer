@@ -32,7 +32,7 @@ Look for these in the message, in `assets/site-profile.md`, and in earlier turns
 - **Outline** (if missing, draft 5 to 7 plain sections using `references/article-types.md`, state the assumption in one line, and proceed)
 - **Real notes**: tools used, results, numbers, likes, dislikes, mistakes. Use `assets/notes-template.md` if the user wants a form to fill in.
 - **Tool facts**: what the user's own tool really does (formats, limits, whether processing happens in the browser or locally, price, watermark). Only verified facts get written as facts.
-- **Primary keyword** (one per article), **length** (default around 900 words), **language** (default English or user's target language)
+- **Primary keyword** (one per article), **length** (content-driven adaptive length matching the natural depth of the topic, or specific target if requested by user), **language** (default English or user's target language)
 
 If the notes are empty, switch to honest-general mode: read `references/honesty-and-claims.md` and follow it. Do not ask the user to fill in notes before writing; write the honest version and remind them afterwards that real details are what make it stand out.
 

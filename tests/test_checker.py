@@ -169,10 +169,18 @@ class TestCheckerIntegration(unittest.TestCase):
         self.assertEqual(res.returncode, 0)
         data = json.loads(res.stdout)
         self.assertIn("stats", data)
+        self.assertEqual(data["stats"]["mode"], "content-driven")
         self.assertIn("fix", data)
         self.assertIn("check", data)
         self.assertEqual(len(data["fix"]), 0)
         self.assertEqual(len(data["check"]), 0)
+
+    def test_explicit_target_flag(self):
+        res = self.run_checker(["examples/without-notes-general.md", "--no-notes", "--target", "850", "--json"])
+        self.assertEqual(res.returncode, 0)
+        data = json.loads(res.stdout)
+        self.assertEqual(data["stats"]["mode"], "target")
+        self.assertEqual(data["stats"]["target"], 850)
 
     def test_banned_phrase_fails_with_exit_code_1(self):
         with tempfile.NamedTemporaryFile("w+", suffix=".md", delete=False, encoding="utf-8") as tf:

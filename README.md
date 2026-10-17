@@ -109,7 +109,10 @@ The agent writes the draft, executes `scripts/check_article.py`, resolves flagge
 The verification script requires Python 3.7+ and has zero third-party dependencies:
 
 ```bash
-# Standard check with a 900-word target and tool mention cap
+# Standard check (content-driven adaptive length: checks substantive depth without rigid word quotas)
+python scripts/check_article.py draft.md --tool "MyTool"
+
+# Check with a specific target word count (e.g. 900 words ± 15%)
 python scripts/check_article.py draft.md --target 900 --tool "MyTool"
 
 # Strict mode: fails if any first-hand experience claims lack real notes
@@ -128,8 +131,8 @@ python scripts/check_article.py draft.md --json
 
 | Flag | Default | Description |
 |---|---|---|
-| `--target INT` | `900` | Target word count |
-| `--tolerance FLOAT` | `0.15` | Acceptable word count variance (±15%) |
+| `--target INT` | `0` (content-driven) | Target word count. When `0`, evaluates substantive technical depth per section without imposing a rigid word quota. When `> 0`, enforces tolerance. |
+| `--tolerance FLOAT` | `0.15` | Acceptable word count variance (±15%) when `--target` is set |
 | `--tool STR` | `None` | Product name to check against self-promotion frequency |
 | `--max-tool INT` | `3` | Maximum allowed tool mentions across the article |
 | `--no-notes` | `False` | Converts claimed experience phrases from informational checks to hard failures |
