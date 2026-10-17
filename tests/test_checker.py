@@ -156,6 +156,14 @@ class TestCheckerIntegration(unittest.TestCase):
         self.assertEqual(res_without.returncode, 0, f"without-notes-general failed: {res_without.stdout}")
         self.assertIn("Clean.", res_without.stdout)
 
+        res_es = self.run_checker(["examples/multilingual-spanish-edition.md", "--lang", "es", "--no-notes"])
+        self.assertEqual(res_es.returncode, 0, f"multilingual-spanish-edition failed: {res_es.stdout}")
+        self.assertIn("Clean.", res_es.stdout)
+
+        res_hi = self.run_checker(["examples/hindi-article.md", "--lang", "hi", "--no-notes"])
+        self.assertEqual(res_hi.returncode, 0, f"hindi-article failed: {res_hi.stdout}")
+        self.assertIn("Clean.", res_hi.stdout)
+
     def test_json_output_mode(self):
         res = self.run_checker(["examples/without-notes-general.md", "--no-notes", "--json"])
         self.assertEqual(res.returncode, 0)

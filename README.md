@@ -70,7 +70,8 @@ human-article-writer/
 └── examples/                         # Verified reference articles (900-word clean baseline)
     ├── with-notes-how-to.md          # Mode 1: Technical tutorial with real test data (900 words)
     ├── without-notes-general.md      # Mode 2: General overview with zero fake claims (900 words)
-    └── multilingual-spanish-edition.md # Spanish reference edition
+    ├── multilingual-spanish-edition.md # Spanish reference edition (Latin script)
+    └── hindi-article.md              # Hindi reference edition (Devanagari script)
 ```
 
 ---
@@ -205,6 +206,7 @@ The repository includes tested reference articles calibrated to pass all default
 - [examples/with-notes-how-to.md](examples/with-notes-how-to.md): Mode 1 (Real Notes, 900 words). Shows how authentic benchmark numbers, setup quirks, and concrete trade-offs are presented without corporate marketing language.
 - [examples/without-notes-general.md](examples/without-notes-general.md): Mode 2 (Honest General, 900 words). Demonstrates how to explain concepts and architectural patterns thoroughly when the author has not conducted personal hands-on tests, avoiding fabricated personal anecdotes.
 - [examples/multilingual-spanish-edition.md](examples/multilingual-spanish-edition.md): Spanish reference demonstrating Tier 1 native phrase enforcement and localized conversational tone.
+- [examples/hindi-article.md](examples/hindi-article.md): Hindi reference demonstrating non-Latin Unicode support, danda cadence, and culturally specific opinion markers.
 
 ---
 
