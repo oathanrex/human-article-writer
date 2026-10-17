@@ -19,7 +19,7 @@ The skill is built on a two-tier localization architecture:
 
 - **Tier 1 (34 Curated Native Language Packs)**: Out-of-the-box native cliché lists, opinion markers, and experience detectors for `ar`, `bn`, `cs`, `da`, `de`, `el`, `en`, `es`, `fa`, `fi`, `fr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `ko`, `ms`, `nl`, `no`, `pl`, `pt`, `ro`, `ru`, `sv`, `sw`, `th`, `tl`, `tr`, `uk`, `ur`, `vi`, `zh` in `references/banned-phrases-<lang>.txt`.
 - **Tier 2 (Universal Extensible Architecture for 100+ Additional Languages)**: Run `python scripts/check_article.py draft.md --lang <any_iso_code>`. Structural checks (word counts, sentence cadence, section length symmetry variance, code-fence isolation, burstiness spread, honesty checks) apply universally without false positives. Custom banned phrase files dropped in `references/banned-phrases-<lang>.txt` are auto-discovered dynamically.
-- **Multilingual Writing Guide**: Read `references/multilingual-guide.md` for cross-language human writing principles and cultural adaptations.
+- **Multilingual Writing Guide**: Read `references/multilingual-guide.md` for cross-language human writing principles, cultural adaptations, and a representative showcase across selected language families and scripts.
 - **Core Voice Guide**: `references/voice-guide.md` details sentence rhythm, tone, and the **26 Signs of AI Writing**.
 
 ## Workflow
@@ -109,7 +109,7 @@ FAQ block, meta title and description, slug, image alt text, internal-link sugge
 ## Reference files
 
 - `references/voice-guide.md`: Core voice, style rules, generated-text patterns, self-review pass
-- `references/multilingual-guide.md`: Universal multilingual guide covering 100+ languages
+- `references/multilingual-guide.md`: Two-tier multilingual architecture guide and representative showcase across selected language families
 - `references/banned-phrases.txt`: English hard-banned and soft-avoid word lists (read by the checker)
 - `references/banned-phrases-es.txt`: Spanish hard-banned and soft-avoid word lists
 - `references/banned-phrases-fr.txt`: French hard-banned and soft-avoid word lists
