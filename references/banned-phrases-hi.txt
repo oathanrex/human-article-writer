@@ -1,0 +1,46 @@
+# Banned and avoided phrases for Hindi/Hinglish articles.
+# Read by scripts/check_article.py when --lang hi is used.
+# English banned phrases are also loaded as base.
+# One entry per line.
+
+[hard]
+इस लेख में
+आइए जानते हैं
+aiye jaante hain
+chaliye dekhte hain
+is lekh mein
+ant mein
+निष्कर्ष
+सारांश
+अंतिम शब्द
+antim shabd
+toh chaliye shuru karte hain
+aakhir mein
+sabse pehle
+sabse zaroori baat
+aaj ke is digital duniya mein
+aaj ke daur mein
+aaj ki duniya mein
+bina kisi jhanjhat ke
+beshak
+nishchit roop se
+koi shak nahi
+bina kisi sandeh ke
+
+[soft]
+sunishchit karein
+upyog karein
+avashyak
+mahatvapurn
+sampurn
+visheshta
+suvidha
+uplabdh
+safalta
+prabhavshali
+vyapak
+sashakt
+kushal
+suvidhajanak
+sahaj
+sucharoo

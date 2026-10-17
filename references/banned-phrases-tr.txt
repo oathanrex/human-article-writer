@@ -1,0 +1,53 @@
+# Banned words and phrases for Turkish articles (human-article-writer)
+# Lines under [hard] are hard failures (FIX in check_article.py).
+# Lines under [soft] are corporate/AI filler (CHECK in check_article.py).
+
+[hard]
+sonuç olarak
+özetle
+toparlamak gerekirse
+özetlemek gerekirse
+günümüzün hızla değişen dünyasında
+günümüzün dinamik dünyasında
+dönüştürücü bir yolculuk
+hadi dalalım
+derinlemesine inceleyelim
+devrim niteliğinde
+ezber bozan
+oyun değiştirici
+kimsenin size söylemediği sır
+sadece x değil aynı zamanda y
+bir doku
+söylemeye gerek yok
+
+[soft]
+hayati
+kritik
+temel
+optimize etmek
+yararlanmak
+kusursuz
+titizlikle
+bütünsel
+sağlam
+sinerji
+paradigma
+dönüştürmek
+dinamik
+son teknoloji
+önemli etki
+kullanıcı dostu
+sezgisel
+ileri teknoloji
+vazgeçilmez
+köşe taşı
+kuantum sıçraması
+şüphesiz
+ekosistem
+katalizör
+güçlendirmek
+stratejik
+merkezi
+verimli
+akıcı
+etkili

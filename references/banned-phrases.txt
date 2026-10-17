@@ -1,0 +1,72 @@
+# Banned and avoided phrases. Read by scripts/check_article.py.
+# One entry per line. Single words also match endings (navigate -> navigates, navigating).
+# [hard] entries are FIX items in the checker. [soft] entries are CHECK items.
+
+[hard]
+moreover
+furthermore
+in conclusion
+overall
+delve
+seamless
+robust
+leverage
+transformative
+cutting-edge
+cutting edge
+game-changer
+game changer
+ultimate guide
+here's the thing
+let's face it
+let's dive in
+dive in
+dive into
+whether you're
+in this article
+navigate
+unlock
+landscape
+crucial
+journey
+when it comes to
+it is important to note
+it's important to note
+in today's digital world
+in today's world
+look no further
+to sum up
+so there you have it
+hope this helps
+final thoughts
+wrapping up
+
+[soft]
+ensure
+simply
+perfect
+plethora
+utilize
+comprehensive
+essential
+vital
+enhance
+streamline
+empower
+elevate
+unleash
+tapestry
+realm
+pivotal
+myriad
+embark
+harness
+revolutionize
+effortless
+it's worth noting
+it's worth mentioning
+at the end of the day
+in a nutshell
+without further ado
+take it to the next level
+a wide range of

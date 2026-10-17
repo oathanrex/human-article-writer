@@ -1,0 +1,54 @@
+# Banned words and phrases for Portuguese articles (human-article-writer)
+# Lines under [hard] are hard failures (FIX in check_article.py).
+# Lines under [soft] are corporate/AI filler (CHECK in check_article.py).
+
+[hard]
+em conclusão
+em resumo
+para concluir
+para resumir
+em suma
+uma tapeçaria de
+no cenário atual
+no mundo dinâmico de hoje
+mergulhe em
+uma jornada transformadora
+é crucial entender
+é imperativo
+sem dúvida
+vale ressaltar que
+é importante destacar que
+não é apenas x mas também y
+revolucionário
+inovador
+de ponta
+desmistificar
+o segredo que ninguém conta
+verdadeiro divisor de águas
+
+[soft]
+crucial
+essencial
+fundamental
+otimizar
+aproveitar
+garantir
+navegar
+potencializar
+meticulosamente
+holístico
+perfeito
+robusto
+sinergia
+paradigma
+revolucionar
+transformar
+dinâmico
+vital
+impacto significativo
+experiência fluida
+fácil de usar
+intuitivo
+ultra
+superficial
+de última geração

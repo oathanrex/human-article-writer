@@ -1,0 +1,983 @@
+# Banned words and phrases for German articles (human-article-writer)
+# Lines under [hard] are hard failures (FIX in check_article.py).
+# Lines under [soft] are corporate/AI filler (CHECK in check_article.py).
+
+[hard]
+zusammenfassend lässt sich sagen
+zusammenfassend
+fazit
+abschließend
+in der heutigen schnelllebigen welt
+in der heutigen dynamischen welt
+tauchen wir ein
+eine transformative reise
+es ist von entscheidender bedeutung
+es ist unerlässlich
+ohne zweifel
+es ist erwähnenswert
+es ist wichtig zu betonen
+nicht nur x sondern auch y
+revolutionär
+bahnbrechend
+am puls der zeit
+entmystifizieren
+das geheimnis das niemand verrät
+echter gamechanger
+
+[soft]
+entscheidend
+unerlässlich
+grundlegend
+optimieren
+nutzen
+gewährleisten
+zweifellos
+navigieren
+steigern
+akribisch
+ganzheitlich
+nahtlos
+robust
+synergie
+paradigma
+revolutionieren
+transformieren
+dynamisch
+vital
+maßgeblich
+signifikante auswirkungen
+benutzerfreundlich
+intuitiv
+hochmodern
+unverzichtbar
+katalysator
+eckpfeiler
+spitzenklasse
+game-changer
+next-level
+out-of-the-box
+plug-and-play
+state-of-the-art
+wunderwaffe
+geheimrezept
+no-brainer
+win-win
+mehrwert
+wachstumsmotor
+erfolgsfaktor
+schlüsselelement
+dreh- und angelpunkt
+panazee
+wundermittel
+heiliger gral
+nonplusultra
+aushängeschild
+wegweisend
+pionier
+leitstern
+kompass
+meilenstein
+fundament
+brutstätte
+schmelztiegel
+sprungbrett
+epizentrum
+drehscheibe
+bastion
+arsenal
+werkzeugkasten
+kaleidoskop
+bühne
+drahtseilakt
+herkulesaufgabe
+symphonie
+meisterwerk
+silberstreif
+paradies
+oase
+zufluchtsort
+schutzschild
+leuchtturm
+anker
+drehpunkt
+herzstück
+nervenzentrum
+kontrollturm
+cockpit
+vorreiter
+visionär
+denkfabrik
+paradigmenwechsel
+quantensprung
+zauberformel
+i-tüpfelchen
+glanzstück
+juwel
+diamant
+schatz
+vogelweide
+goldgrube
+überflieger
+phänomen
+erdebeben
+paukenschlag
+donnerschlag
+kraftakt
+meisterleistung
+glanztat
+geniestreich
+durchbruch
+traumstart
+senkrechtstarter
+spitzenreiter
+tabellenführer
+vorzeigemodell
+musterbeispiel
+glanzleistung
+vollblut
+meisterhaft
+bravourös
+furios
+fulminant
+spektakulär
+phänomenal
+sensationell
+atemberaubend
+überwältigend
+eindrucksvoll
+beeindruckend
+faszinierend
+fesselnd
+mitreißend
+begeisternd
+hinreißend
+zauberhaft
+magisch
+brillant
+genial
+hervorragend
+exzellent
+erstklassig
+makellos
+tadellos
+vorbildlich
+musterschültig
+einwandfrei
+fehlerfrei
+unübertroffen
+unvergleichlich
+einzigartig
+beispiellos
+noch nie dagewesen
+bahnbrechende neuheit
+revolutionärer ansatz
+strategischer vorteil
+entscheidender hebel
+fundamentaler baustein
+unverzichtbares werkzeug
+ideale lösung
+perfekte symbiose
+harmonisches zusammenspiel
+schlüssel zum erfolg
+erfolgsrezept
+goldene regel
+zehn gebote
+bibel der entwickler
+ultimativer leitfaden
+schritt-für-schritt-anleitung
+idiotensicher
+kinderleicht
+im handumdrehen
+wie von zauberhand
+auf einen klick
+spielend leicht
+reibungslos
+garantiert
+100% sicher
+risikofrei
+sofortige ergebnisse
+revolutionieren sie
+starten sie noch heute
+verpassen sie nicht
+klicken sie hier
+melden sie sich an
+jetzt zugreifen
+nur für kurze zeit
+absolute perfektion
+traumhafte ergebnisse
+überzeugen sie sich selbst
+die zukunft beginnt jetzt
+willkommen in der zukunft
+erfolg vorprogrammiert
+auf dem weg zum erfolg
+greifen sie nach den sternen
+das maß aller dinge
+state of the art lösung
+rundum-sorglos-paket
+alles aus einer hand
+die antwort auf alle fragen
+das rätsels lösung
+das nonplusultra der technik
+schluss mit kopfschmerzen
+nie wieder frust
+leicht gemacht
+so einfach geht's
+der trick der profis
+profi-tipp
+geheimtipp
+goldwert
+unbezahlbar
+jahrhundert-erfindung
+der große wurf
+alles auf anfang
+ein neues kapitel
+die karten neu gemischt
+außerhalb der box denken
+grenzen verschieben
+neue horizonte
+zukunft gestalten
+die zukunft in die hand nehmen
+über sich hinauswachsen
+das beste aus sich herausholen
+keine kompromisse
+nur das beste
+höchste ansprüche
+perfektion bis ins detail
+liebe zum detail
+leidenschaft für qualität
+qualität zahlt sich aus
+der unterschied liegt im detail
+made for champions
+für höchste ansprüche
+ausgezeichnete qualität
+geprüfte qualität
+tüv-geprüft
+garantierter mehrwert
+gewinnbringend
+renditestark
+zukunftssicher
+nachhaltig erfolgreich
+auf der überholspur
+die nase vorn
+einen schritt voraus
+der konkurrenz davoneilen
+den ton angeben
+die weichen stellen
+die zügel in der hand
+alles im griff
+auf kurs bleiben
+das ziel vor augen
+keine halben sachen
+nägel mit köpfen
+vollgas geben
+alles auf eine karte
+ins schwarze treffen
+den nagel auf den kopf
+einen volltreffer landen
+ein voller erfolg
+auf ganzer linie
+ohne wenn und aber
+klipp und klar
+hand aufs herz
+butter bei die fische
+tacheles reden
+reinen tisch machen
+kein blatt vor den mund
+offen und ehrlich
+von mensch zu mensch
+auf augenhöhe
+gemeinsam stark
+teamwork makes the dream work
+hand in hand
+seite an seite
+schulter an schulter
+ein unschlagbares team
+das traumpaar
+die perfekte kombination
+das erfolgsduo
+die erfolgsformel
+das a und o
+das gelbe vom ei
+das maß der dinge
+in aller munde
+der letzte schrei
+voll im trend
+am zahn der zeit
+up to date
+state of the art
+last but not least
+zu guter letzt
+am ende des tages
+unter dem strich
+kurzum
+in aller kürze
+das fazit der geschichte
+das war's
+und fertig
+so schnell geht das
+ganz einfach
+überzeugt?
+worauf warten sie noch?
+probieren sie es aus!
+los geht's!
+viel erfolg!
+gutes gelingen!
+bis zum nächsten mal!
+auf wiedersehen!
+herzliche grüße!
+ihr team!
+danke fürs lesen!
+ende gut, alles gut!
+amen!
+punkt!
+basta!
+aus und vorbei!
+ende der geschichte!
+das war unser überblick!
+damit sind wir am ende!
+wir hoffen es hat geholfen!
+lassen sie uns wissen!
+schreiben sie einen kommentar!
+teilen sie diesen beitrag!
+abonnieren sie unseren newsletter!
+bis bald!
+tschüss!
+ciao!
+servus!
+grüß gott!
+auf bald!
+wiederhören!
+adieu!
+gute reise!
+frohes schaffen!
+erfolgreiches gelingen!
+gut holz!
+hals- und beinbruch!
+toi toi toi!
+in diesem sinne!
+schlusswort!
+abschließende worte!
+letzte gedanken!
+resümee!
+kurz und knapp!
+auf den punkt gebracht!
+ohne umschweife!
+das wesentliche im blick!
+das wichtigste auf einen blick!
+takeaways!
+key takeaways!
+zusammenfassung der kernpunkte!
+wir fassen zusammen!
+wie wir gesehen haben!
+wie bereits erwähnt!
+wie oben beschrieben!
+wie versprochen!
+alles in allem!
+im großen und ganzen!
+summa summarum!
+schlussendlich!
+letztendlich!
+letztlich!
+im endeffekt!
+unter dem strich bleibt!
+bleibt festzuhalten!
+es bleibt zu hoffen!
+die zeit wird es zeigen!
+wir dürfen gespannt sein!
+fortsetzung folgt!
+to be continued!
+ende!
+the end!
+aus!
+vorbei!
+fertig!
+schluss!
+ausklang!
+abspann!
+vorhang auf!
+vorhang fällt!
+klappe die letzte!
+fin!
+ende der durchsage!
+punktum!
+abgemacht!
+deal!
+gekauft!
+eingetütet!
+in trockenen tüchern!
+deckel drauf!
+haken dran!
+erledigt!
+vollbracht!
+geschafft!
+geschafft und glücklich!
+mission erfüllt!
+ziel erreicht!
+am ziel!
+gipfelsturm geglückt!
+geschafft, hurra!
+super!
+toll!
+klasse!
+wunderbar!
+prima!
+perfekt!
+ausgezeichnet!
+großartig!
+fantastisch!
+spitze!
+einsame spitze!
+einsatz gezeigt!
+hut ab!
+chapeau!
+alle achtung!
+respekt!
+glückwunsch!
+gratulation!
+wir gratulieren!
+alles gute!
+weiter so!
+bleiben sie dran!
+dranbleiben lohnt sich!
+geduld zahlt sich aus!
+übung macht den meister!
+es ist noch kein meister vom himmel gefallen!
+gut ding will weile haben!
+rom wurde auch nicht an einem tag erbaut!
+morgenstund hat gold im mund!
+der frühe vogel fängt den wurm!
+wer rastet, der rostet!
+ohne fleiß kein preis!
+selbst ist der mann!
+selbst ist die frau!
+einfach machen!
+just do it!
+packen wir es an!
+an die arbeit!
+frisch ans werk!
+auf geht's!
+los!
+start!
+go!
+fertig, los!
+auf die plätze, fertig, los!
+start frei!
+bahn frei!
+grünes licht!
+fahrt frei!
+volle kraft voraus!
+leinen los!
+schiff ahoi!
+gute fahrt!
+guten flug!
+gute reise in die zukunft!
+die zukunft ruft!
+die welt steht ihnen offen!
+nutzen sie die chance!
+ihre zukunft beginnt jetzt!
+ergreifen sie die initiative!
+werden sie aktiv!
+tun sie den ersten schritt!
+der erste schritt zum erfolg!
+starten sie durch!
+heben sie ab!
+fliegen sie hoch!
+erreichen sie ihr ziel!
+verwirklichen sie ihre träume!
+leben sie ihren traum!
+machen sie ihre träume wahr!
+erfolg ist kein zufall!
+erfolg ist planbar!
+ihr erfolg ist unser ziel!
+wir machen sie erfolgreich!
+ihr partner für erfolg!
+vertrauen sie den profis!
+vertrauen sie den experten!
+in besten händen!
+gut aufgehoben!
+rundum geschützt!
+sorgenfrei in die zukunft!
+keine angst vor fehlern!
+mut zur lücke!
+einfach ausprobieren!
+probieren geht über studieren!
+wer nicht wagt, der nicht gewinnt!
+mut wird belohnt!
+trauen sie sich!
+wagen sie den schritt!
+springen sie ins kalte wasser!
+keine sorge, es klappt!
+es lohnt sich!
+sie werden es nicht bereuen!
+versprochen!
+ehrenwort!
+garantiert erfolgreich!
+testen sie es jetzt!
+überzeugen sie sich selbst!
+sehen sie selbst!
+sie haben die wahl!
+die entscheidung liegt bei ihnen!
+wählen sie den erfolg!
+treffen sie die richtige entscheidung!
+für eine erfolgreiche zukunft!
+damit verabschieden wir uns!
+vielen dank für ihre aufmerksamkeit!
+wir wünschen ihnen alles gute!
+viel freude beim umsetzen!
+viel erfolg bei ihren projekten!
+auf ein wiedersehen!
+ihre redaktion!
+bis zum nächsten artikel!
+bleiben sie neugierig!
+bleiben sie gesund!
+bleiben sie informiert!
+ihr leitfaden für den erfolg!
+das finale!
+der schlussakkord!
+das letzte wort!
+stille!
+und aus!
+schlussstrich!
+ende gelände!
+schicht im schacht!
+klappe zu, affe tot!
+feierabend!
+zeit für den feierabend!
+ab nach hause!
+fertig mit der welt!
+alles gesagt!
+nichts hinzuzufügen!
+punkt, aus, ende!
+amen und aus!
+ad astra!
+carpe diem!
+per aspera ad astra!
+sapere aude!
+alea iacta est!
+quod erat demonstrandum!
+q.e.d.!
+ende des textes!
+textende!
+ende des dokuments!
+schluss, aus, vorbei!
+stop!
+halt!
+genug gesagt!
+fertig aus!
+over!
+out!
+over and out!
+schlussausende!
+tschau!
+ade!
+pfiat di!
+habedieehre!
+servus und baba!
+grüezi!
+auf baldiges wiedersehen!
+wir sehen uns!
+bis denne!
+mach's gut!
+passen sie auf sich auf!
+alles liebe!
+herzlichst!
+beste grüße!
+mit freundlichen grüßen!
+in liebe!
+ihr autor!
+das autorenteam!
+die verfasser!
+die redaktion dankt!
+danke!
+vielen dank!
+danke danke!
+herzlichen dank!
+ein großes danke!
+danke für alles!
+danke fürs vorbeischauen!
+schön dass sie da waren!
+kommen sie bald wieder!
+wir freuen uns auf sie!
+bis demnächst!
+und tschüss!
+und weg!
+bye bye!
+bye!
+so long!
+farewell!
+see you soon!
+see you later!
+catch you later!
+peace out!
+ciao ciao!
+adios amigos!
+sayonara!
+shalom!
+namaste!
+khuda hafiz!
+aloha!
+cheerio!
+tata!
+toodle-oo!
+pip pip!
+tchin tchin!
+prost!
+zum wohl!
+stößchen!
+auf ihr wohl!
+auf ihren erfolg!
+hoch die tassen!
+auf die zukunft!
+auf das leben!
+cheers!
+salute!
+santé!
+skål!
+na zdraví!
+kanpai!
+prost mahlzeit!
+ende im gelände!
+schluss mit lustig!
+der drops ist gelutscht!
+der keks ist gegessen!
+der ofen ist aus!
+der zug ist abgefahren!
+der fisch ist geputzt!
+die katze ist im sack!
+das kind liegt im brunnen!
+das ding ist geritzt!
+die sache ist gegessen!
+die sache hat sich erledigt!
+damit hat sich's!
+aus die maus!
+basta pasta!
+fertig ist die laube!
+ende peng!
+bums aus!
+ausgeträumt!
+fertiggestellt!
+erfolgreich beendet!
+vollendet!
+perfektioniert!
+abgeschlossen!
+archiviert!
+abgehakt!
+abgelegt!
+ad acta gelegt!
+eingetütet und versiegelt!
+mit brief und siegel!
+besiegelt!
+unumstößlich!
+in stein gemeißelt!
+für die ewigkeit!
+auf ewig!
+für immer und ewig!
+bis in alle ewigkeit!
+zeitlos!
+unsterblich!
+unvergänglich!
+ewig währender erfolg!
+der kreis schließt sich!
+die reise endet hier!
+anker gelichtet und festgemacht!
+hafen erreicht!
+sicherer hafen!
+ankunft!
+willkommen zu hause!
+zu hause angekommen!
+ende der fahrt!
+alle aussteigen bitte!
+endstation!
+terminus technicus!
+das war's leute!
+that's all folks!
+that's all!
+nichts mehr zu tun!
+zurücklehnen und genießen!
+jetzt entspannen!
+zeit zu entspannen!
+genießen sie ihren erfolg!
+ernten sie die früchte!
+die ernte einfahren!
+die früchte ihrer arbeit!
+lohnt sich immer!
+wir danken für ihr vertrauen!
+auf eine erfolgreiche zukunft!
+ihr verlässlicher partner!
+immer an ihrer seite!
+heute und morgen!
+für immer ihr experte!
+der experte an ihrer seite!
+ende gut, alles besser!
+bis zum nächsten artikel in unserem blog!
+wir melden uns wieder!
+bleiben sie uns treu!
+ihre treue wird belohnt!
+danke für ihre treue!
+bis bald wieder hier!
+wir freuen uns auf ihren nächsten besuch!
+schönen tag noch!
+schönen abend!
+gute nacht!
+angenehme ruhe!
+schönes wochenende!
+guten wochenstart!
+erfolgreiche woche!
+alles gute für sie!
+bleiben sie erfolgreich!
+auf bald im netz!
+ihr online-team!
+ihr experten-portal!
+ihre anlaufstelle nummer eins!
+die erste adresse im web!
+führend im netz!
+das portal ihres vertrauens!
+immer einen klick wert!
+favorisieren sie uns!
+setzen sie ein lesezeichen!
+drücken sie strg+d!
+weiterempfehlen erwünscht!
+sagen sie es weiter!
+mundpropaganda ist die beste werbung!
+teilen macht freude!
+sharing is caring!
+danke fürs teilen!
+ihre meinung zählt!
+ihr feedback ist willkommen!
+was meinen sie dazu?
+diskutieren sie mit!
+hinterlassen sie ihre gedanken!
+wir sind gespannt auf ihre meinung!
+ihre stimme im netz!
+gemeinsam diskutieren!
+konstruktiver austausch!
+bleiben sie im dialog!
+bis zum nächsten mal in den kommentaren!
+wir lesen jeden kommentar!
+ihre community!
+gemeinsam wachsen!
+wissen teilen!
+wissen ist macht!
+teilen sie ihr wissen!
+gemeinsam mehr erreichen!
+auf eine starke zukunft!
+ihre zukunft, unser antrieb!
+ende und aus!
+schlussakkord verklungen!
+ton aus!
+licht aus!
+spot aus!
+bühne frei für ihren erfolg!
+jetzt sind sie dran!
+ihr auftritt!
+die bühne gehört ihnen!
+viel applaus!
+standing ovations für sie!
+sie haben es sich verdient!
+sie sind der gewinner!
+sieger der herzen!
+unangefochtene nummer eins!
+der sieg gehört ihnen!
+krönen sie ihren erfolg!
+die krone gehört ihnen!
+setzen sie die krone auf!
+ihr meisterstück!
+ihr lebenswerk!
+ihre erfolgsgeschichte!
+schreiben sie geschichte!
+werden sie zur legende!
+ihre legende beginnt heute!
+jetzt legendenstatus erreichen!
+für immer unvergessen!
+ein denkmal setzen!
+setzen sie sich ein denkmal!
+die geschichte wird sie feiern!
+in den geschichtsbüchern verewigt!
+ihr name in goldenen lettern!
+goldener abschluss!
+glänzende zukunft!
+strahlender sieg!
+der sieg ist ihr!
+ende des leitfadens!
+letzter satz!
+letztes wort!
+letzter buchstabe!
+punktum, finito!
+finito!
+finito la musica!
+aus ist's!
+fertig ist das werk!
+das werk ist getan!
+vollendete tatsachen!
+geschlossene gesellschaft!
+die tore schließen sich!
+bis zum nächsten kapitel!
+das war kapitel eins!
+das nächste kapitel wartet!
+schlagen sie das nächste kapitel auf!
+ein neues zeitalter!
+das zeitalter des erfolgs!
+ihre goldene ära!
+die ära beginnt jetzt!
+willkommen in ihrer ära!
+regieren sie ihr reich!
+ihr digitales königreich!
+der königsweg!
+ihre goldene zukunft!
+wir sehen uns dort!
+treffpunkt spitze!
+wir sehen uns ganz oben!
+oben ist die luft dünner aber schöner!
+sehen wir uns am gipfel!
+der berg ruft!
+gipfelstürmer vereint!
+auf den höchsten gipfeln!
+der ausblick ist herrlich!
+genießen sie den ausblick!
+ihr blick in die zukunft!
+alles gute da oben!
+bleiben sie auf der spitze!
+verteidigen sie den thron!
+der thron ist sicher!
+ewige herrschaft des erfolgs!
+damit schließt sich das buch!
+buchdeckel zu!
+ins regal gestellt!
+das buch des wissens!
+schließen wir die akte!
+akte geschlossen!
+fall gelöst!
+sherlock wäre stolz!
+detektivischer erfolg!
+glasklar bewiesen!
+keine weiteren fragen euer ehren!
+die verteidigung schließt!
+das urteil lautet: erfolg!
+schuldig im sinne des erfolgs!
+lebenslänglich glücklich!
+strafe: purer erfolg!
+wir freuen uns für sie!
+ihr treuer begleiter!
+für immer an ihrer seite!
+ewige partnerschaft!
+zusammen unschlagbar!
+bis in alle ewigkeit!
+und wenn sie nicht gestorben sind dann leben sie noch heute!
+märchenhaftes ende!
+ihr märchen wird wahr!
+das happy end!
+ihr persönliches happy end!
+happy end garantiert!
+kein drama, nur erfolg!
+vorhang endgültig zu!
+letzter vorhang!
+applaus brandet auf!
+verneigung!
+danke sehr!
+danke ihnen!
+danke europa!
+danke welt!
+danke für alles!
+gute nacht allerseits!
+schlaft gut!
+träumt was schönes!
+bis morgen früh!
+in alter frische!
+morgen geht es weiter!
+neuer tag, neues glück!
+jeder tag ist eine neue chance!
+nutzen sie den heutigen tag!
+nutzen sie das jetzt!
+hier und jetzt!
+im hier und jetzt!
+gegenwart gestalten!
+zukunft sichern!
+vergangenheit vergessen!
+nach vorne schauen!
+blick nach vorn!
+vorwärts immer, rückwärts nimmer!
+voller elan!
+mit frischem mut!
+frohen mutes!
+guten mutes!
+herzhaft lachen!
+lachen ist die beste medizin!
+lächeln sie!
+ein lächeln für die zukunft!
+ihr strahlendster moment!
+moment des triumphs!
+triumph der vernunft!
+triumph des könnens!
+handwerkliches meisterstück!
+deutsche wertarbeit!
+qualität setzt sich durch!
+made in germany!
+erstklassige arbeit!
+wertarbeit für die ewigkeit!
+ein meisterwerk sondergleichen!
+bewundernswert!
+einzigartig in seiner art!
+ein unikat!
+so etwas gab es noch nie!
+eine neue dimension!
+dimension des erfolgs!
+betreten sie eine neue welt!
+willkommen daheim!
+ihr hafen der ruhe!
+ihr fundament des erfolgs!
+darauf können sie bauen!
+felsenfest!
+wie ein fels in der brandung!
+unerschütterlich!
+stabil und sicher!
+höchste sicherheitsstufe!
+geprüfte sicherheit!
+sicher in die zukunft!
+ihre zukunft ist gesichert!
+keine zweifel mehr!
+zweifel adé!
+volles vertrauen!
+vertrauen zahlt sich aus!
+ihr vertrauensvorschuss!
+wir halten wort!
+wort gehalten!
+versprechen eingelöst!
+garantie erfüllt!
+zufriedenheit auf ganzer linie!
+100 prozentige zufriedenheit!
+perfektes ergebnis!
+besser geht es nicht!
+das beste vom besten!
+sahnehäubchen!
+krönender abschluss!
+das wars jetzt aber wirklich!
+jetzt ist aber schluss!
+genug geredet!
+jetzt wird gehandelt!
+taten statt worte!
+lassen sie taten sprechen!
+ihre taten zählen!
+handeln sie jetzt!
+der ball liegt bei ihnen!
+sie sind am zug!
+ihr spielzug!
+schachmatt!
+gewonnen!
+sieg auf ganzer linie!
+sie haben gewonnen!
+herzlichen glückwunsch zum sieg!
+der pokal ist ihr!
+die trophäe winkt!
+stellen sie die trophäe ins regal!
+stolzer sieger!
+ein sieger zweifelt nie!
+sieger zweifeln nicht!
+einfach triumphieren!
+und damit: schluss!
+aus!
+ende!
+punkt!
+fertig!
+over!
+out!
+tschüss!

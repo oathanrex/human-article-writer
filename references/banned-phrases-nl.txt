@@ -1,0 +1,53 @@
+# Banned words and phrases for Dutch articles (human-article-writer)
+# Lines under [hard] are hard failures (FIX in check_article.py).
+# Lines under [soft] are corporate/AI filler (CHECK in check_article.py).
+
+[hard]
+kortom
+samenvattend
+tot slot
+ter afsluiting
+concluderend
+in de snelle wereld van vandaag
+in de dynamische wereld van vandaag
+een transformerende reis
+laten we duiken in
+revolutionair
+baanbrekend
+echte gamechanger
+het geheim dat niemand je vertelt
+niet alleen x maar ook y
+een tapijt van
+het spreekt voor zich
+
+[soft]
+cruciaal
+essentieel
+fundamenteel
+optimaliseren
+benutten
+naadloos
+nauwgezet
+holistisch
+robuust
+synergie
+paradigma
+transformeren
+dynamisch
+voorhoede
+aanzienlijke impact
+gebruiksvriendelijk
+intuïtief
+geavanceerd
+onmisbaar
+hoeksteen
+kwantumsprong
+ongetwijfeld
+ecosysteem
+katalysator
+versterken
+baanbrekende innovatie
+strategisch
+vitaal
+krachtig
+efficiënt

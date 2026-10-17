@@ -1,0 +1,52 @@
+# Banned words and phrases for Polish articles (human-article-writer)
+# Lines under [hard] are hard failures (FIX in check_article.py).
+# Lines under [soft] are corporate/AI filler (CHECK in check_article.py).
+
+[hard]
+podsumowując
+na koniec
+w konkluzji
+rekapitulując
+w dzisiejszym dynamicznym świecie
+w dzisiejszym szybko zmieniającym się świecie
+transformacyjna podróż
+zanurzmy się w
+rewolucyjny
+przełomowy
+prawdziwy gamechanger
+sekret którego nikt ci nie powie
+nie tylko x ale również y
+gobelin możliwości
+nie ulega wątpliwości
+
+[soft]
+kluczowy
+zasadniczy
+fundamentalny
+optymalizować
+wykorzystać
+płynny
+skrupulatnie
+holistyczny
+solidny
+synergia
+paradygmat
+przekształcać
+dynamiczny
+nowatorski
+znaczący wpływ
+przyjazny dla użytkownika
+intuicyjny
+zaawansowany
+nieodzowny
+kamień węgielny
+skok kwantowy
+bez wątpienia
+ekosystem
+katalizator
+wzmocnić
+strategiczny
+newralgiczny
+wydajny
+bezproblemowy
+efektywny

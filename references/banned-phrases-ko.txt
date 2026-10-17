@@ -1,0 +1,54 @@
+# Banned words and phrases for Korean articles (human-article-writer)
+# Lines under [hard] are hard failures (FIX in check_article.py).
+# Lines under [soft] are corporate/AI filler (CHECK in check_article.py).
+
+[hard]
+결론적으로
+요약하자면
+결론을 내리자면
+마지막으로
+오늘날 급변하는 세상에서
+오늘날 역동적인 세상에서
+혁신적인 여정
+변혁의 여정
+깊이 파고들어 봅시다
+함께 살펴보겠습니다
+판도를 바꾸는
+획기적인
+혁명적인
+아무도 말해주지 않는 비밀
+게임 체인저
+태피스트리
+말할 필요도 없이
+
+[soft]
+결정적인
+필수적인
+근본적인
+최적화
+활용
+매끄러운
+꼼꼼하게
+전체론적
+강력한
+시너지
+패러다임
+변혁
+역동적인
+최첨단
+상당한 영향
+사용자 친화적
+직관적
+차세대
+없어서는 안 될
+초석
+비약적인 발전
+의심할 여지 없이
+생태계
+촉매제
+강화
+전략적
+중추적인
+핵심적인
+원활한
+효율적

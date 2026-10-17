@@ -1,0 +1,54 @@
+# Banned words and phrases for Italian articles (human-article-writer)
+# Lines under [hard] are hard failures (FIX in check_article.py).
+# Lines under [soft] are corporate/AI filler (CHECK in check_article.py).
+
+[hard]
+in conclusione
+in sintesi
+per concludere
+per riassumere
+in somma
+un arazzo di
+nel panorama attuale
+nel dinamico mondo di oggi
+immergiti in
+un viaggio trasformativo
+è fondamentale capire
+è imperativo
+senza dubbio
+vale la pena notare che
+è importante sottolineare che
+non è solo x ma anche y
+rivoluzionario
+innovativo
+all'avanguardia
+demistificare
+il segreto che nessuno ti dice
+vero punto di svolta
+
+[soft]
+cruciale
+essenziale
+fondamentale
+ottimizzare
+sfruttare
+garantire
+navigare
+potenziare
+meticolosamente
+olistico
+senza soluzione di continuità
+robusto
+sinergia
+paradigma
+rivoluzionare
+trasformare
+dinamico
+vitale
+impatto significativo
+esperienza fluida
+facile da usare
+intuitivo
+ultra
+superficiale
+di ultima generazione
