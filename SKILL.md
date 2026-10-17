@@ -124,6 +124,8 @@ FAQ block, meta title and description, slug, image alt text, internal-link sugge
 - `assets/notes-template.md`: fill-in form for real notes
 - `scripts/check_article.py`: the style and claims checker (run with `--help` for all options)
 
+The Spanish and Hindi articles in `examples/` are representative localization samples across different scripts. They illustrate the shared workflow and do not limit or prioritize language support; consult the language-pack list above for supported languages.
+
 ## Example articles
 
 - `examples/with-notes-how-to.md`: technical tutorial written with real user notes (Mode 1: with-notes)

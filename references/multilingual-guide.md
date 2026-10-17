@@ -62,7 +62,7 @@ AI text sounds robotic regardless of whether it is written in English, Spanish, 
 
 ## 3. Side-by-Side Multilingual Showcase
 
-To see how the human voice adapts across global languages without sounding like machine translation:
+These short examples demonstrate how the same writing principles adapt across different language families and scripts. They are illustrative, not exhaustive, and do not indicate that the listed languages receive special preference.
 
 ### 🇺🇸 English
 > **Robotic AI**: *"In today's fast-paced DevOps environment, optimizing container build performance is crucial for seamless developer workflows. In this section, let us explore..."*

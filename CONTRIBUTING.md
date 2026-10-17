@@ -14,7 +14,7 @@ The skill includes Tier-1 curated packs for 34 major languages and dynamically d
 1. Create `references/banned-phrases-LANG.txt` following the format in `banned-phrases.txt`
 2. (Optional) Create `references/voice-guide-LANG.md` or consult `references/multilingual-guide.md`
 3. Add language-specific opinion and experience patterns in `scripts/check_article.py`
-4. Create an example article in `examples/`
+4. Optionally add or update an example in `examples/` when it demonstrates a useful new script, language-family adaptation, or checker behavior. Examples are representative, not a requirement for every supported language.
 5. Test it with `python scripts/check_article.py examples/your-article.md --lang LANG`
 6. Run the test suite: `python -m unittest discover tests`
 7. Open a PR
