@@ -143,12 +143,18 @@ The checker classifies findings into three tiers:
   - Markdown tables inside the body text
   - Question-based opening sentences (*"Have you ever wondered...?"*)
   - Redundant conclusion sections (*"In summary"*, *"Final thoughts"*, *"Fazit"*, *"Kesimpulan"*)
+  - One-line dramatic closers (*"Let that sink in"*, *"Read that again"*, *"That is the real win"*)
   - Experience claims made without input notes (in `--no-notes` mode)
 
 - **CHECK (Quality Warnings)**:
   - Corporate filler words (*"leverage"*, *"utilize"*, *"comprehensive"*)
   - Absolute privacy or security guarantees (*"100% safe"*, *"zero risk"*)
   - Sentence length monotony (average sentence length > 17 words or < 25% short sentences)
+  - Shallow -ing participle riders (*", ensuring seamless workflows"*, *", highlighting the importance"*)
+  - Vague connection copulas (*"serves as a"*, *"acts as a"*, *"stands as a testament"*)
+  - Arguing with phantom objections (*"I'm not saying"*, *"Don't get me wrong"*, *"A tempting approach would be"*)
+  - Document meta-talk (*"In this article we explore"*, *"This section discusses"*)
+  - Section heading echoed in opening sentence
   - Robotic transition announcements (*"Let us now discuss"*, *"Moving on to"*)
   - Clickbait heading phrasing
   - Symmetrical section word counts (uniform length across sections)

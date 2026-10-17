@@ -22,7 +22,7 @@ The cheapest place to intercept a leak is on the developer's laptop before code 
 
 ## Automated Pattern Scanners in the CI Pipeline
 
-Workstation hooks help. But individuals can bypass them. People use git flags to skip local verification. A centralized CI scanner acts as a reliable backstop across all repositories.
+Workstation hooks help. But individuals can bypass them. People use git flags to skip local verification. A centralized CI scanner provides a reliable backstop across all repositories.
 
 Every pull request runs through automated pattern matching that flags exposed tokens before merge approval. If a leak does slip through, modern hosting providers also notify API vendors directly so the affected key can be revoked automatically. Automation never forgets. Personally, I prefer relying on automated server scans because you cannot accidentally forget to run them during busy deploy cycles.
 

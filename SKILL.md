@@ -1,26 +1,26 @@
 ---
 name: human-article-writer
-description: Write, rewrite, expand, or outline blog articles, SEO articles, how-to posts, tool pages, and other website content in a casual first-person voice that avoids AI-sounding patterns and never invents fake experience, results, or claims. Universal multi-language support covering 100+ languages (English, Spanish, French, German, Portuguese, Italian, Japanese, Chinese, etc.). Use this skill whenever the user asks for an article, blog post, outline, "thin content" fix, a rewrite to sound more natural or human, an expansion to a word count, an FAQ, a meta title and description, or internal-link ideas, or pastes a TOPIC / OUTLINE / NOTES block. Trigger automatically regardless of input language, and even if the user never says the word "skill".
+description: Write, rewrite, expand, outline, or humanize blog articles, SEO articles, how-to guides, and technical prose in an authentic conversational voice that eliminates AI tells and never invents fake experience. Answers to /human-article-writer or /humanizer. Incorporates Wikipedia's 26 Signs of AI Writing with universal multi-language support across 34 built-in languages and all 133+ Google Translate codes.
 ---
 
 # Human Article Writer
 
-This skill turns a topic, an outline, and the user's real notes into an article that sounds like a regular person talking, passes a mechanical style check, and stays honest about what the author actually did. It also handles the work around the article: outlines, FAQ, meta tags, internal links, and rewrites.
-
-The goal is useful, believable content for a real website. Casual voice is a style choice; it is never a licence to make up experiences, test results, or product claims. Readers lose trust when they catch a fake story, and search engines are getting better at spotting thin content that has no original detail.
+This skill serves two complementary workflows:
+1. **Full Article Generation**: Turns a topic, an outline, and optional user test notes into an authentic, human-sounding article that passes mechanical style checks, stays honest about real experience, and includes complete SEO framing.
+2. **Text & File Humanizer (`/humanizer`)**: Rewrites existing AI-sounding drafts or files to remove the 26 signs of AI writing while preserving exact facts, quotes, code blocks, and information.
 
 ## Talking with the user
 
-Reply in the language the user writes in. If the user writes in Spanish, answer in Spanish. If English, answer in English. If French, German, Portuguese, or any other language, match their language. Keep chat replies concise. Ask at most one question at a time, and never block on a missing input when a sensible default exists.
+Reply in the language the user writes in. If the user writes in Spanish, answer in Spanish. If English, answer in English. If French, German, Japanese, or any other language, match their language. Keep chat replies concise. Ask at most one question at a time, and never block on a missing input when a sensible default exists.
 
 ## Universal Multi-Language Support
 
-The skill is built on a locale-agnostic engine covering **all 100+ languages** supported by modern LLMs and Google Translate:
+The skill is built on a locale-agnostic engine covering **all 133+ languages** supported by modern LLMs and Google Translate:
 
 - **Universal Multi-Language Guide**: Read `references/multilingual-guide.md` for cross-language human writing principles across all 133+ Google Translate languages.
-- **Core Voice Guide**: `references/voice-guide.md` establishes the first-person, anti-AI cadence.
+- **Core Voice Guide**: `references/voice-guide.md` establishes the first-person, anti-AI cadence and details the **26 Signs of AI Writing**.
 - **34 Built-in Language Banned Phrase Packs**: Out-of-the-box native cliché lists, opinion markers, and experience detectors for `ar`, `bn`, `cs`, `da`, `de`, `el`, `en`, `es`, `fa`, `fi`, `fr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `ko`, `ms`, `nl`, `no`, `pl`, `pt`, `ro`, `ru`, `sv`, `sw`, `th`, `tl`, `tr`, `uk`, `ur`, `vi`, `zh` in `references/banned-phrases-<lang>.txt`.
-- **Any Other Language (133+ Total)**: Run `python scripts/check_article.py draft.md --lang <any_iso_code>`. Structural checks (length, cadence, headings, formatting, code block fences, honesty) apply universally to any language without false positives. Custom banned phrase files are auto-discovered dynamically.
+- **Any Other Language (133+ Total)**: Run `python scripts/check_article.py draft.md --lang <any_iso_code>`. Structural checks apply universally to any language without false positives. Custom banned phrase files are auto-discovered dynamically.
 
 ## Workflow
 

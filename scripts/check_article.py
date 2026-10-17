@@ -468,6 +468,63 @@ CLICKBAIT_HEADING = re.compile(
     re.I,
 )
 
+# Wikipedia Signs of AI writing patterns
+ONE_LINE_CLOSERS = re.compile(
+    r"\b(?:let that sink in|read that again|that(?:'s| is) the real win|"
+    r"that distinction matters|the old rules were gone|the takeaway is clear)\b",
+    re.I,
+)
+ING_RIDERS = re.compile(
+    r",\s+(?:ensuring|highlighting|showcasing|reflecting|underscoring|emphasizing|fostering|enabling)\b",
+    re.I,
+)
+VAGUE_CONNECTION = re.compile(
+    r"\b(?:serves as (?:a|an)|acts as (?:a|an)|stands as (?:a|an)|stands as a testament to|"
+    r"plays a pivotal role in|plays a crucial role in)\b",
+    re.I,
+)
+ARGUING_NO_ONE = re.compile(
+    r"\b(?:i'm not saying|don't get me wrong|this isn't to say|this is not to say|"
+    r"one might be tempted to|a tempting approach would be)\b",
+    re.I,
+)
+META_DOC_TALK = re.compile(
+    r"\b(?:in this (?:article|guide|post|tutorial),? (?:we will|we'll|we explore|we discuss)|"
+    r"this (?:article|guide|post) (?:will explore|covers|aims to))\b",
+    re.I,
+)
+
+# Verbose multi-word filler patterns (say in one word what AI wraps in six)
+VERBOSE_FILLERS = re.compile(
+    r"\b(?:due to the fact that|in the event that|has the ability to|"
+    r"has the capacity to|for the purpose of|with regard to|with respect to|"
+    r"in light of the fact that|prior to the event|subsequent to the event)\b",
+    re.I,
+)
+
+# StoryScope discourse-level structural patterns
+STATED_LESSON = re.compile(
+    r"\b(?:the (?:lesson|takeaway|moral) (?:here )?is|what this means for you|"
+    r"if you take (?:only )?one thing|moral of the story|and that'?s (?:the point|the whole point)|"
+    r"the bottom line is)\b",
+    re.I,
+)
+TIDY_CLOSER = re.compile(
+    r"\b(?:at the end of the day|in the end,? we see|looking back on this|"
+    r"the future looks bright|brings us full circle)\b",
+    re.I,
+)
+VAGUE_ALLUSION = re.compile(
+    r"\b(?:experts?|researchers?|scientists|professionals)\s+(?:say|agree|believe|argue|warn|suggest)\b|"
+    r"\b(?:studies|research)\s+(?:show|shows|suggests?|indicates?|have shown)\b",
+    re.I,
+)
+EMBODIED_EMOTION = re.compile(
+    r"\b(?:breath (?:caught|hitched|stalled)|caught (?:my|his|her|their) breath|"
+    r"blood ran cold|swallowed hard|knot in (?:my|his|her|their) stomach)\b",
+    re.I,
+)
+
 
 def norm(s):
     return s.replace("\u2019", "'").replace("\u2018", "'").replace("\u201c", '"').replace("\u201d", '"')
@@ -754,10 +811,16 @@ def main():
         lens = [len(words(s)) for s in all_sents]
         avg = sum(lens) / len(lens)
         short_ratio = sum(1 for n in lens if n <= 8) / len(lens)
+        spread = max(lens) - min(lens) if lens else 0
+        mid_band_ratio = sum(1 for n in lens if 10 <= n <= 20) / len(lens)
         if avg > 17:
             checks.append(f"average sentence length is {avg:.1f} words, aim for under 17 with a mix of short ones")
         if short_ratio < 0.25:
             checks.append(f"only {short_ratio:.0%} of sentences are 8 words or fewer, add more short ones")
+        if len(lens) >= 10 and spread < 14:
+            checks.append(f"low sentence length spread ({spread} words delta between longest and shortest), alternate punchy and unfolded sentences")
+        if len(lens) >= 12 and mid_band_ratio > 0.70:
+            checks.append(f"{mid_band_ratio:.0%} of sentences are clustered in the 10-20 word mid-band, break rhythm with shorter and longer counterweights")
         run, prev = 1, None
         for s in all_sents:
             first = (words(s) or [""])[0].lower()
@@ -814,6 +877,40 @@ def main():
     threes = THREE_LIST.findall(body_text)
     for t in threes[:8]:
         checks.append(f'possible list of three: "{t[0]}, {t[1]} and {t[2]}" (ignore if they are nouns or steps)')
+
+    # ---- Wikipedia Signs of AI writing patterns ----
+    for m in ONE_LINE_CLOSERS.finditer(body_text):
+        fixes.append(f'AI one-line closer: "{m.group(0)}" (remove or integrate into previous sentence)')
+    for m in ING_RIDERS.finditer(body_text):
+        checks.append(f'shallow -ing participle rider: "{m.group(0)}" (state consequence directly)')
+    for m in VAGUE_CONNECTION.finditer(body_text):
+        checks.append(f'vague connection phrase: "{m.group(0)}" (use direct verbs like is, has, helps)')
+    for m in ARGUING_NO_ONE.finditer(body_text):
+        checks.append(f'arguing with phantom objection: "{m.group(0)}" (state the point directly)')
+    for m in META_DOC_TALK.finditer(body_text):
+        checks.append(f'document meta-talk: "{m.group(0)}" (focus on the subject, not the document)')
+    for m in VERBOSE_FILLERS.finditer(body_text):
+        checks.append(f'verbose multi-word filler: "{m.group(0)}" (use single direct word: because, if, can, etc.)')
+
+    # ---- StoryScope discourse and structural patterns ----
+    for m in STATED_LESSON.finditer(body_text):
+        checks.append(f'stated lesson/moralizing: "{m.group(0)}" (let the technical details make the point)')
+    for m in TIDY_CLOSER.finditer(body_text):
+        checks.append(f'tidy wrap-up cliché: "{m.group(0)}" (end on a concrete technical fact, not a philosophical bow)')
+    for m in VAGUE_ALLUSION.finditer(body_text):
+        checks.append(f'unnamed authority claim: "{m.group(0)}" (name the specific tool or author, or state as direct fact)')
+    for m in EMBODIED_EMOTION.finditer(body_text):
+        checks.append(f'embodied emotion cliché: "{m.group(0)}" (state the technical situation plainly)')
+
+    # ---- heading echo in opening sentence ----
+    for s in body_sections:
+        h = s["heading"].lower().strip()
+        body_sents = sentences(" ".join(t for _, t in s["body"]))
+        if body_sents:
+            first_s = body_sents[0].lower()
+            h_words = [w for w in words(h) if len(w) > 3]
+            if len(h_words) >= 3 and all(w in first_s for w in h_words):
+                checks.append(f'heading echoed in opening sentence of section "{s["heading"]}" (dive straight into detail)')
 
     # ---- experience / numbers ----
     exp_re = EXPERIENCE_PATTERNS.get(lang, EXPERIENCE_PATTERNS["en"] if lang == "en" else None)
