@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [2.3.0] - 2026-10-17
+## [2.4.0] - 2026-10-18
 
 ### Added
 - **Automated Test Suite**: Zero-dependency `tests/test_checker.py` containing 16 unit and CLI integration tests using Python's standard `unittest` library.
