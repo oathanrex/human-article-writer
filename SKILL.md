@@ -1,6 +1,6 @@
 ---
 name: human-article-writer
-description: Write, rewrite, expand, outline, or humanize blog articles, SEO articles, how-to guides, and technical prose in an authentic conversational voice that eliminates AI tells and never invents fake experience. Answers to /human-article-writer or /humanizer. Incorporates Wikipedia's 26 Signs of AI Writing with universal multi-language support across 34 built-in languages and all 133+ Google Translate codes.
+description: Write, rewrite, expand, outline, or humanize blog articles, SEO articles, how-to guides, and technical prose in an authentic conversational voice that eliminates AI tells and never invents fake experience. Answers to /human-article-writer or /humanizer. Incorporates Wikipedia's 26 Signs of AI Writing with tiered multi-language support (34 curated native language packs + universal extensible architecture for 100+ additional languages).
 ---
 
 # Human Article Writer
@@ -13,14 +13,14 @@ This skill serves two complementary workflows:
 
 Reply in the language the user writes in. If the user writes in Spanish, answer in Spanish. If English, answer in English. If French, German, Japanese, or any other language, match their language. Keep chat replies concise. Ask at most one question at a time, and never block on a missing input when a sensible default exists.
 
-## Universal Multi-Language Support
+## Tiered Multi-Language Support
 
-The skill is built on a locale-agnostic engine covering **all 133+ languages** supported by modern LLMs and Google Translate:
+The skill is built on a two-tier localization architecture:
 
-- **Universal Multi-Language Guide**: Read `references/multilingual-guide.md` for cross-language human writing principles across all 133+ Google Translate languages.
-- **Core Voice Guide**: `references/voice-guide.md` establishes the first-person, anti-AI cadence and details the **26 Signs of AI Writing**.
-- **34 Built-in Language Banned Phrase Packs**: Out-of-the-box native cliché lists, opinion markers, and experience detectors for `ar`, `bn`, `cs`, `da`, `de`, `el`, `en`, `es`, `fa`, `fi`, `fr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `ko`, `ms`, `nl`, `no`, `pl`, `pt`, `ro`, `ru`, `sv`, `sw`, `th`, `tl`, `tr`, `uk`, `ur`, `vi`, `zh` in `references/banned-phrases-<lang>.txt`.
-- **Any Other Language (133+ Total)**: Run `python scripts/check_article.py draft.md --lang <any_iso_code>`. Structural checks apply universally to any language without false positives. Custom banned phrase files are auto-discovered dynamically.
+- **Tier 1 (34 Curated Native Language Packs)**: Out-of-the-box native cliché lists, opinion markers, and experience detectors for `ar`, `bn`, `cs`, `da`, `de`, `el`, `en`, `es`, `fa`, `fi`, `fr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `ko`, `ms`, `nl`, `no`, `pl`, `pt`, `ro`, `ru`, `sv`, `sw`, `th`, `tl`, `tr`, `uk`, `ur`, `vi`, `zh` in `references/banned-phrases-<lang>.txt`.
+- **Tier 2 (Universal Extensible Architecture for 100+ Additional Languages)**: Run `python scripts/check_article.py draft.md --lang <any_iso_code>`. Structural checks (word counts, sentence cadence, section length symmetry variance, code-fence isolation, burstiness spread, honesty checks) apply universally without false positives. Custom banned phrase files dropped in `references/banned-phrases-<lang>.txt` are auto-discovered dynamically.
+- **Multilingual Writing Guide**: Read `references/multilingual-guide.md` for cross-language human writing principles and cultural adaptations.
+- **Core Voice Guide**: `references/voice-guide.md` details sentence rhythm, tone, and the **26 Signs of AI Writing**.
 
 ## Workflow
 

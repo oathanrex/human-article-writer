@@ -22,8 +22,9 @@ This repository gives AI coding assistants (Antigravity, Claude, ChatGPT, Cursor
 
 1. **Honesty-first architecture**: When you provide real testing notes, the skill integrates your exact numbers and observations. When you do not provide notes, it shifts into honest-general mode and forbids claiming first-hand experience.
 2. **Mechanical verification**: A zero-dependency Python script (`check_article.py`) verifies drafts against 30+ linguistic markers, sentence length variance, and structural constraints.
-3. **Universal multilingual engine**: Includes native banned-phrase lists and opinion patterns for 34 global languages, plus language-agnostic structural linting for all 133+ Google Translate languages.
-4. **No promotional fluff**: Prohibits em dashes, boldface emphasis spam, intrusive comparison tables in article bodies, and artificial summary sections.
+3. **Tiered multilingual engine**: Dedicated native phrase packs and opinion patterns for 34 global languages, plus language-agnostic structural linting for 100+ additional languages supported by modern LLMs.
+4. **Automated test suite**: Built-in test suite in `tests/test_checker.py` using Python's standard library `unittest` (zero external dependencies).
+5. **No promotional fluff**: Prohibits em dashes, boldface emphasis spam, intrusive comparison tables in article bodies, and artificial summary sections.
 
 ---
 
@@ -47,9 +48,12 @@ human-article-writer/
 ├── CONTRIBUTING.md                   # Contribution guide
 ├── CHANGELOG.md                      # Release notes
 │
+├── tests/                            # Automated test suite (zero-dependency)
+│   └── test_checker.py               # Unit & CLI integration tests
+│
 ├── references/                       # Style standards and linguistic datasets
 │   ├── voice-guide.md                # Sentence cadence, rhythm, and tone
-│   ├── multilingual-guide.md         # Cross-language human writing guide
+│   ├── multilingual-guide.md         # Two-tier multi-language architecture guide
 │   ├── honesty-and-claims.md         # First-hand experience verification rules
 │   ├── article-types.md              # Structural outlines for 5 common article types
 │   ├── seo-extras.md                 # FAQs, meta tags, and internal link specs
@@ -63,9 +67,10 @@ human-article-writer/
 ├── scripts/                          # Automated linting tools
 │   └── check_article.py              # Zero-dependency markdown linter
 │
-└── examples/                         # Verified reference articles
-    ├── with-notes-how-to.md          # Mode 1: Technical tutorial with real test data
-    └── without-notes-general.md      # Mode 2: General overview with zero fake claims
+└── examples/                         # Verified reference articles (900-word clean baseline)
+    ├── with-notes-how-to.md          # Mode 1: Technical tutorial with real test data (900 words)
+    ├── without-notes-general.md      # Mode 2: General overview with zero fake claims (900 words)
+    └── multilingual-spanish-edition.md # Spanish reference edition
 ```
 
 ---
@@ -167,21 +172,39 @@ The checker classifies findings into three tiers:
 
 ## Supported languages
 
-The engine includes out-of-the-box banned phrase lists, opinion dictionaries, and experience claim detectors for **34 languages**:
+The linter and writing engine operate on a **two-tier architecture**:
 
-`ar`, `bn`, `cs`, `da`, `de`, `el`, `en`, `es`, `fa`, `fi`, `fr`, `he`, `hi`, `hu`, `id`, `it`, `ja`, `ko`, `ms`, `nl`, `no`, `pl`, `pt`, `ro`, `ru`, `sv`, `sw`, `th`, `tl`, `tr`, `uk`, `ur`, `vi`, `zh`.
+### Tier 1: 34 Curated Native Language Packs
+Includes out-of-the-box native banned-phrase lists, localized transition clichés, culturally tuned opinion dictionaries, and first-hand experience claim detectors for:
 
-### Other Google Translate languages (133+)
-To use any other language code, pass `--lang <code>`. Universal checks (cadence, structural balance, code fence safety, heading rules, and honesty bounds) apply automatically. You can add localized banned phrases by dropping a file named `references/banned-phrases-<code\>.txt`.
+`ar` (Arabic), `bn` (Bengali), `cs` (Czech), `da` (Danish), `de` (German), `el` (Greek), `en` (English), `es` (Spanish), `fa` (Persian), `fi` (Finnish), `fr` (French), `he` (Hebrew), `hi` (Hindi), `hu` (Hungarian), `id` (Indonesian), `it` (Italian), `ja` (Japanese), `ko` (Korean), `ms` (Malay), `nl` (Dutch), `no` (Norwegian), `pl` (Polish), `pt` (Portuguese), `ro` (Romanian), `ru` (Russian), `sv` (Swedish), `sw` (Swahili), `th` (Thai), `tl` (Tagalog), `tr` (Turkish), `uk` (Ukrainian), `ur` (Urdu), `vi` (Vietnamese), `zh` (Chinese).
+
+### Tier 2: Universal Extensible Architecture (100+ Additional Languages)
+For any other language supported by modern LLMs or Google Translate (e.g. Marathi, Tamil, Telugu, Estonian, Latvian, Lithuanian, Slovak, etc.):
+1. Pass the language code: `python scripts/check_article.py draft.md --lang <code>`
+2. All language-agnostic checks execute universally: sentence cadence, section length symmetry variance, code-fence isolation, heading depth, list-of-three, burstiness distribution, and honesty enforcement.
+3. Custom vocabulary packs can be dropped into `references/banned-phrases-<code>.txt` and are auto-discovered immediately.
+
+---
+
+## Automated testing
+
+The project includes an automated test suite verifying tokenization, regex markers, code block fence isolation, section variance, claimed experience enforcement, and CLI exit codes with zero third-party dependencies:
+
+```bash
+# Run the complete test suite
+python -m unittest discover tests
+```
 
 ---
 
 ## Two operating modes
 
-The repository includes tested reference articles demonstrating both operating modes:
+The repository includes tested reference articles calibrated to pass all default linter rules cleanly:
 
-- [examples/with-notes-how-to.md](examples/with-notes-how-to.md): Mode 1 (Real Notes). Shows how authentic benchmark numbers, setup quirks, and concrete trade-offs are presented without corporate marketing language.
-- [examples/without-notes-general.md](examples/without-notes-general.md): Mode 2 (Honest General). Demonstrates how to explain concepts and architectural patterns thoroughly when the author has not conducted personal hands-on tests, avoiding fabricated personal anecdotes.
+- [examples/with-notes-how-to.md](examples/with-notes-how-to.md): Mode 1 (Real Notes, 900 words). Shows how authentic benchmark numbers, setup quirks, and concrete trade-offs are presented without corporate marketing language.
+- [examples/without-notes-general.md](examples/without-notes-general.md): Mode 2 (Honest General, 900 words). Demonstrates how to explain concepts and architectural patterns thoroughly when the author has not conducted personal hands-on tests, avoiding fabricated personal anecdotes.
+- [examples/multilingual-spanish-edition.md](examples/multilingual-spanish-edition.md): Spanish reference demonstrating Tier 1 native phrase enforcement and localized conversational tone.
 
 ---
 

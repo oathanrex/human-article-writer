@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.3.0] - 2026-10-17
+
+### Added
+- **Automated Test Suite**: Zero-dependency `tests/test_checker.py` containing 16 unit and CLI integration tests using Python's standard `unittest` library.
+- **Two-Tier Language Architecture Documentation**: Clarified Tier 1 (34 Curated Native Language Packs with dedicated phrase dictionaries and regexes) vs. Tier 2 (Universal Extensible Engine for 100+ Additional Languages) across `README.md`, `SKILL.md`, and `multilingual-guide.md`.
+
+### Improved
+- **Bundled Reference Examples Calibrated**: Re-calibrated `examples/with-notes-how-to.md` (897 words) and `examples/without-notes-general.md` (842 words) to pass all default 900-word target checks with 0 FIX, 0 CHECK, "Clean." out-of-the-box.
+- **Checker Tokenization**: Enhanced Unicode word tokenization to properly include Devanagari combining marks (`\u0900-\u097F`).
+- **Contributing Guidelines**: Added automated test execution commands to `CONTRIBUTING.md`.
+
 ## [2.2.0] - 2026-10-17
 
 ### Added

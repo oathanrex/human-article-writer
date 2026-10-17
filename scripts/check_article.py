@@ -31,8 +31,8 @@ HERE = pathlib.Path(__file__).resolve().parent
 REFS_DIR = HERE.parent / "references"
 
 SENT_SPLIT = re.compile(r"(?<=[.!?।])\s+(?=[A-Za-z0-9\u0900-\u097F\"'(\u00C0-\u017F])")
-# Unicode-aware word pattern covering Latin (with accents/umlauts), Devanagari, etc.
-WORD = re.compile(r"[\w]+(?:['’]\w+)?", re.UNICODE)
+# Unicode-aware word pattern covering Latin (with accents/umlauts), Devanagari combining marks, etc.
+WORD = re.compile(r"[\w\u0900-\u097F]+(?:['’][\w\u0900-\u097F]+)?", re.UNICODE)
 
 OPINION_PATTERNS = {
     "en": re.compile(

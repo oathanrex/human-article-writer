@@ -120,8 +120,9 @@ The skill includes built-in banned phrase files and opinion/experience detectors
 | `it` | Italian | Latin | `vi` | Vietnamese | Latin |
 | `ja` | Japanese | Kanji/Kana | `zh` | Chinese | Hanzi |
 
-### Universal Support for Any Google Translate Language (133+)
-If your target language is not in the built-in list above (e.g. Marathi, Tamil, Telugu, Estonian, Latvian, Lithuanian, Slovak, etc.):
-1. Pass the ISO code: `python scripts/check_article.py article.md --lang <code\>`
-2. (Optional) Create `references/banned-phrases-<code\>.txt` with native clichés.
-3. The checker automatically executes the universal structural rules: word count target, section variance, sentence rhythm, heading rules, list-of-three, code block safety, and honesty checks.
+### Tier 2: Universal Extensible Architecture (100+ Additional Languages)
+
+If your target language is not in the curated Tier 1 list above (e.g. Marathi, Tamil, Telugu, Estonian, Latvian, Lithuanian, Slovak, Slovenian, etc.):
+1. **Pass the ISO code**: `python scripts/check_article.py article.md --lang <code>`
+2. **Universal linting executes automatically**: The checker evaluates word count target tolerances, section length symmetry variance, sentence cadence, heading depth, list-of-three constructs, code block fence isolation, and claimed experience honesty rules.
+3. **Drop-in custom phrase packs**: Add native buzzwords and clichés by creating `references/banned-phrases-<code>.txt` with `[hard]` and `[soft]` blocks. The linter auto-discovers and enforces them immediately.
