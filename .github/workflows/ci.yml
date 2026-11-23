@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    name: Test (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # Validate the project's "Python 3.7+" claim across active versions.
+        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Verify the checker runs
+        run: python scripts/check_article.py --help
+
+      - name: Run the test suite
+        run: python -m unittest discover tests
+
+  lint-examples:
+    name: Lint bundled examples
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Ensure bundled examples pass the checker clean
+        run: |
+          python scripts/check_article.py examples/with-notes-how-to.md --tool "ExampleTool"
+          python scripts/check_article.py examples/without-notes-general.md --no-notes
+          python scripts/check_article.py examples/multilingual-spanish-edition.md --lang es
+          python scripts/check_article.py examples/hindi-article.md --lang hi

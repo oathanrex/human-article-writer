@@ -41,6 +41,17 @@ class TestCheckerUnit(unittest.TestCase):
         sents = check_article.sentences(sample)
         self.assertEqual(len(sents), 4)
 
+    def test_sentences_split_abbreviations(self):
+        # Abbreviation periods must not be treated as sentence boundaries.
+        sample = (
+            "Dr. Smith tested the tool. He found e.g. that it works. "
+            "Mr. Jones used it too. No. the file is 3.5 MB."
+        )
+        sents = check_article.sentences(sample)
+        self.assertEqual(len(sents), 4)
+        self.assertIn("Dr. Smith tested the tool.", sents)
+        self.assertIn("He found e.g. that it works.", sents)
+
     def test_code_block_fence_ignored(self):
         lines = [
             "# Heading",
@@ -83,8 +94,8 @@ class TestCheckerUnit(unittest.TestCase):
         self.assertIn("desentrañar", hard_es)
 
     def test_em_dash_detection(self):
-        sample = "We were running fast — and then stopped."
-        self.assertIn("—", sample)
+        sample = "We were running fast \u2014 and then stopped."
+        self.assertIn("\u2014", sample)
 
     def test_list_of_three_regex(self):
         sample_en = "Speed, reliability, and security are essential."
@@ -143,7 +154,7 @@ class TestCheckerIntegration(unittest.TestCase):
 
     def run_checker(self, args):
         cmd = [sys.executable, str(CHECKER_PY)] + args
-        res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding="utf-8")
+        res = subprocess.run(cmd, cwd=str(ROOT_DIR), stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding="utf-8")
         return res
 
     def test_bundled_examples_pass_clean(self):
@@ -181,6 +192,32 @@ class TestCheckerIntegration(unittest.TestCase):
         data = json.loads(res.stdout)
         self.assertEqual(data["stats"]["mode"], "target")
         self.assertEqual(data["stats"]["target"], 850)
+
+    def test_no_double_flag_for_repeated_opinion(self):
+        # "I think" should be reported once by the opinion-variety check,
+        # not a second time by a redundant English-only block.
+        with tempfile.NamedTemporaryFile("w+", suffix=".md", delete=False, encoding="utf-8") as tf:
+            tf.write(
+                "# Opinion Test\n\n"
+                "Intro paragraph introducing the topic.\n\n"
+                "## Section One\n\n"
+                "I think this works well. I think that is clear. "
+                "I think we can move on. I think the result is good.\n\n"
+                "## Section Two\n\n"
+                "More text about the topic here.\n"
+            )
+            temp_path = tf.name
+        try:
+            res = self.run_checker([temp_path, "--json"])
+            self.assertEqual(res.returncode, 0)
+            data = json.loads(res.stdout)
+            think_messages = [c for c in data["check"] if "i think" in c.lower()]
+            self.assertEqual(
+                len(think_messages), 1,
+                f"expected exactly one 'I think' message, got {think_messages}",
+            )
+        finally:
+            os.remove(temp_path)
 
     def test_banned_phrase_fails_with_exit_code_1(self):
         with tempfile.NamedTemporaryFile("w+", suffix=".md", delete=False, encoding="utf-8") as tf:

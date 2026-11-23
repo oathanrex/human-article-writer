@@ -34,6 +34,15 @@ SENT_SPLIT = re.compile(r"(?<=[.!?।])\s+(?=[A-Za-z0-9\u0900-\u097F\"'(\u00C0-\
 # Unicode-aware word pattern covering Latin (with accents/umlauts), Devanagari combining marks, etc.
 WORD = re.compile(r"[\w\u0900-\u097F]+(?:['’][\w\u0900-\u097F]+)?", re.UNICODE)
 
+# Common abbreviations whose trailing period is not a sentence boundary.
+# Protecting them prevents false sentence splits on "Dr. Smith", "e.g. that", etc.
+_ABBREVIATIONS = (
+    r"\b(?:mr|mrs|ms|dr|prof|st|sr|jr|vs|etc|e\.?g|i\.?e|cf|approx|inc|ltd|co|"
+    r"fig|no|pp|vol|deg|al|min|max|jan|feb|mar|apr|jun|jul|aug|sep|oct|nov|dec)\."
+)
+_ABBR_PROTECT = "\x00ABBR\x00"
+_ABBR_PATTERN = re.compile(_ABBREVIATIONS, re.I)
+
 OPINION_PATTERNS = {
     "en": re.compile(
         r"\b(i think|i'd say|i would say|in my opinion|i feel|i kinda think|i kind of think|"
@@ -576,7 +585,11 @@ def phrase_regex(p):
 
 def sentences(text):
     text = re.sub(r"\s+", " ", text.strip())
-    return [s for s in SENT_SPLIT.split(text) if s]
+    # Protect abbreviation periods so they don't trigger false sentence splits.
+    # Replace only the trailing period with a sentinel, then restore it after splitting.
+    protected = _ABBR_PATTERN.sub(lambda m: m.group(0)[:-1] + "\x00", text)
+    parts = [s for s in SENT_SPLIT.split(protected) if s]
+    return [s.replace("\x00", ".") for s in parts]
 
 
 def words(text):
@@ -873,11 +886,6 @@ def main():
             checks.append(f"{len(no_opinion)} of {len(body_sections)} sections have no personal comment, add small opinions to most sections")
         opinion_variety_issues = check_opinion_variety(body_sections, opinion_re)
         checks.extend(opinion_variety_issues)
-
-    if lang == "en":
-        n_think = len(re.findall(r"\bi think\b", body_text, re.I))
-        if n_think > 3:
-            checks.append(f'"I think" appears {n_think} times, vary the wording')
 
     # ---- patterns ----
     for rx in NOT_X_BUT_Y:

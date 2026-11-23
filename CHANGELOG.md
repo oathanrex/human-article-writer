@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.4.1] - 2026-11-23
+
+### Fixed
+- **Sentence splitter no longer breaks on abbreviations**: `Dr. Smith`, `Mr. Jones`, `e.g. that`, `etc.`, and similar abbreviation periods were being treated as sentence boundaries, corrupting the average sentence length, passive-voice ratio, short-sentence ratio, and repeated-opener detection. Abbreviation periods are now protected before splitting and restored after.
+- **Removed redundant "I think" double-flagging**: A repeated `I think` was reported twice (once by the opinion-variety check and once by a separate English-only block). The redundant block is removed; the opinion-variety check reports it once.
+
+### Added
+- **Regression tests**: `test_sentences_split_abbreviations` (unit) and `test_no_double_flag_for_repeated_opinion` (integration) lock in both fixes. Test suite is now 19 tests.
+- **CI workflow**: `.github/workflows/ci.yml` runs the test suite across Python 3.7 to 3.12 on every push and pull request, plus a job that lints all bundled examples to keep them passing clean.
+
 ## [2.4.0] - 2026-10-18
 
 ### Added
