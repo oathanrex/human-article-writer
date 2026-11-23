@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - **Regression tests**: `test_sentences_split_abbreviations` (unit) and `test_no_double_flag_for_repeated_opinion` (integration) lock in both fixes. Test suite is now 19 tests.
-- **CI workflow**: `.github/workflows/ci.yml` runs the test suite across Python 3.9 to 3.13 on every push and pull request, plus a job that lints all bundled examples to keep them passing clean.
+- **CI workflow**: `.github/workflows/ci.yml` runs the test suite across Python 3.10 to 3.13 on every push and pull request, plus a job that lints all bundled examples to keep them passing clean.
 
 ## [2.4.0] - 2026-10-18
 
