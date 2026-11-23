@@ -50,7 +50,7 @@ human-article-writer/
 │
 ├── .github/
 │   └── workflows/
-│       └── ci.yml                    # Test matrix + example linting (Python 3.7 to 3.12)
+│       └── ci.yml                    # Test matrix + example linting (Python 3.9 to 3.13)
 │
 ├── tests/                            # Automated test suite (zero-dependency)
 │   └── test_checker.py               # Unit & CLI integration tests
@@ -206,7 +206,7 @@ The project includes an automated test suite verifying tokenization, regex marke
 python -m unittest discover tests
 ```
 
-A GitHub Actions workflow (`.github/workflows/ci.yml`) runs the test suite across Python 3.7 to 3.12 on every push and pull request, and lints all bundled examples to keep them passing clean.
+A GitHub Actions workflow (`.github/workflows/ci.yml`) runs the test suite across Python 3.9 to 3.13 on every push and pull request, and lints all bundled examples to keep them passing clean.
 
 ---
 
