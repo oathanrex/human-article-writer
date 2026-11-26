@@ -67,7 +67,7 @@ jobs:
           set +e
           python scripts/check_claims.py --article examples/failing-secondary-source.md \
             --claims examples/failing-secondary-source.claims.md | tee claims.txt
-          code=$?
+          code=${PIPESTATUS[0]}
           test $code -eq 1 || { echo "expected exit 1, got $code"; exit 1; }
           grep -q "number from a book-summary source" claims.txt
           grep -q "no source" claims.txt
