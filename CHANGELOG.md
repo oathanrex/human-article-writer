@@ -1,5 +1,25 @@
 # Changelog
 
+## Unreleased
+
+**Added**
+- **`scripts/check_claims.py` — the provenance gate.** A style linter cannot tell a writer who
+  read the paper from a writer who read an AI summary of a book about the paper. This can. Each
+  draft gets a claims table (`id · claim · value · source · type · verified`), and a number may
+  only come from `own` or `primary`. `secondary` and `book-summary` are fine for framing and a
+  FAIL for any number. Exit 1 on the first broken claim.
+- **`docs/CLAIMS.md`** — the five source types, the four rules, and what the tool deliberately
+  does not do (it will not open the DOI for you, and it cannot see plagiarism).
+- **`examples/claims-demo.md`** (+ `.claims.md`) — the passing case: every number points at a DOI
+  or at a file in this repo.
+- **`examples/failing-secondary-source.md`** (+ `.claims.md`) — the failing case: the same shape
+  of draft, sourced from notebook notes on a book. 6 FAIL rows, `exit 1`, and it is the reason
+  this tool exists.
+- **`tests/test_claims.py`** — 18 tests, one per rule, plus CLI-level exit-code tests for both
+  bundled examples.
+- **CI job `claims`** — asserts the clean example passes, the failing example exits 1 with both
+  expected messages, and the rule tests pass.
+
 All notable changes to this project will be documented in this file.
 
 ## [2.4.1] - 2026-11-23

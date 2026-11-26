@@ -46,3 +46,31 @@ jobs:
           python scripts/check_article.py examples/without-notes-general.md --no-notes
           python scripts/check_article.py examples/multilingual-spanish-edition.md --lang es
           python scripts/check_article.py examples/hindi-article.md --lang hi
+
+  claims:
+    name: claims have receipts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: the clean example must pass (exit 0)
+        run: |
+          python scripts/check_claims.py --article examples/claims-demo.md \
+            --claims examples/claims-demo.claims.md
+
+      - name: the book-summary example must fail (exit 1), and say why
+        run: |
+          set +e
+          python scripts/check_claims.py --article examples/failing-secondary-source.md \
+            --claims examples/failing-secondary-source.claims.md | tee claims.txt
+          code=$?
+          test $code -eq 1 || { echo "expected exit 1, got $code"; exit 1; }
+          grep -q "number from a book-summary source" claims.txt
+          grep -q "no source" claims.txt
+
+      - name: the claims tests
+        run: python -m unittest tests.test_claims -v

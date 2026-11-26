@@ -25,6 +25,7 @@ This repository gives AI coding assistants (Antigravity, Claude, ChatGPT, Cursor
 3. **Tiered multilingual engine**: Dedicated native phrase packs and opinion patterns for 34 global languages, plus language-agnostic structural linting for 100+ additional languages supported by modern LLMs.
 4. **Automated test suite**: Built-in test suite in `tests/test_checker.py` using Python's standard library `unittest` (zero external dependencies).
 5. **No promotional fluff**: Prohibits em dashes, boldface emphasis spam, intrusive comparison tables in article bodies, and artificial summary sections.
+6. **Provenance gate**: A second checker (`check_claims.py`) refuses any number whose source is an AI summary, a book summary or a newsletter. Style lint asks *does this read like a human*; the claims gate asks *could a human have written it*.
 
 ---
 
@@ -52,8 +53,12 @@ human-article-writer/
 │   └── workflows/
 │       └── ci.yml                    # Test matrix + example linting (Python 3.10 to 3.13)
 │
+├── docs/
+│   └── CLAIMS.md                     # Claims-table spec: five source types, four rules
+│
 ├── tests/                            # Automated test suite (zero-dependency)
-│   └── test_checker.py               # Unit & CLI integration tests
+│   ├── test_checker.py               # Unit & CLI tests for the style checker
+│   └── test_claims.py                # Unit & CLI tests for the provenance gate
 │
 ├── references/                       # Style standards and linguistic datasets
 │   ├── voice-guide.md                # Sentence cadence, rhythm, and tone

@@ -84,6 +84,37 @@ The checker catches: banned phrases, em dashes, list formatting, question opener
 
 It cannot judge whether the text is good, so finish with the self-review pass at the end of the voice guide.
 
+### 4b. Prove the numbers (claims file, mandatory)
+
+A style pass cannot tell whether you read the paper or read a summary of a book about the paper. So
+before delivery, every draft gets a claims table beside it:
+
+```
+| id | claim | value | source | type | verified |
+|----|-------|-------|--------|------|----------|
+| C1 | Editors raised writing scores | 0.6 SD | doi:10.1016/j.jebo.2023.11.011 | primary | 2026-11-26 |
+```
+
+`type` is `own` (you measured it, `source` is a path in this repo), `primary` (you read it, `source`
+is a DOI or URL), `secondary` or `book-summary` (someone read it for you: framing only), or `none`.
+
+```bash
+python3 scripts/check_claims.py --article draft.md --claims draft.claims.md
+```
+
+Rules that are not negotiable, in any language:
+
+- A number may only come from `own` or `primary`. A percentage, SD, price or duration sourced from
+  AI notes on a book is a hard FAIL, even if the summary is accurate. Fetch the primary or delete
+  the number.
+- Notes from a notebook, a book summary or a study guide are **not** first-hand experience. Cite
+  them as `book-summary` and keep every number out of those paragraphs.
+- `verified` is the date you checked it. Not the publication date.
+- If the user supplies numbers without a source, ask once. If they cannot give one, the number goes,
+  or it ships with visible hedging ("roughly", "by my count") and no decimal place.
+
+A draft without a passing claims check is not a draft. Say so instead of delivering it.
+
 ### 5. Deliver
 
 Show the article in chat by default so the user can read it straight away. If the user asks for a file, or asks for several articles, save each as a `.md` file and share it.
@@ -122,7 +153,9 @@ FAQ block, meta title and description, slug, image alt text, internal-link sugge
 - `assets/site-profile.md`: the user's site, tools, audience, and article queue (edit once, reused every time)
 - `assets/site-profile-template.md`: blank template for new users (copy to site-profile.md and fill in)
 - `assets/notes-template.md`: fill-in form for real notes
-- `scripts/check_article.py`: the style and claims checker (run with `--help` for all options)
+- `scripts/check_article.py`: the style checker (readability, rhythm, banned phrases, fabricated-experience claims)
+- `scripts/check_claims.py`: the provenance checker — every number in the draft must have a row with a `primary` or `own` source
+- `docs/CLAIMS.md`: the claims-table spec, the five source types, and what the checker cannot do
 
 The Spanish and Hindi articles in `examples/` are representative localization samples across different scripts. They illustrate the shared workflow and do not limit or prioritize language support; consult the language-pack list above for supported languages.
 

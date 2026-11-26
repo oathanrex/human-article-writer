@@ -1,0 +1,4 @@
+# real run, 2026-11-26, this machine, this repo
+# command: python3 scripts/check_article.py examples/with-notes-how-to.md
+exit_code 0
+elapsed_s 0.09
